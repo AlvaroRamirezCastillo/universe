@@ -1,0 +1,16 @@
+<section aria-labelledby="accounts-title">
+  <h2 id="accounts-title">Cuentas</h2>
+  @if (accountsError()) {
+    <p role="alert">No se pudieron cargar las cuentas.</p>
+  } @else if (accounts(); as items) {
+    <ul>
+      @for (account of items; track account.id) {
+        <li>{{ account.name }} · {{ account.email }}</li>
+      } @empty {
+        <li>No hay cuentas disponibles.</li>
+      }
+    </ul>
+  } @else {
+    <p role="status">Cargando cuentas…</p>
+  }
+</section>

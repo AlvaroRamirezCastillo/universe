@@ -14,7 +14,7 @@
     "ios": "pnpm --filter @universe/mobile ios",
     "build": "pnpm -r --if-present run build",
     "test": "pnpm --filter @universe/angular test --watch=false",
-    "typecheck": "pnpm --filter @universe/mobile typecheck",
+    "typecheck": "pnpm -r --if-present run typecheck",
     "check": "pnpm build && pnpm test && pnpm typecheck"
   }
 }
