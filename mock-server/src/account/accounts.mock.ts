@@ -1,6 +1,6 @@
-import type { Account } from '../domain';
+import type { Account } from '@universe/accounts/domain';
 
-export const demoAccounts: readonly Account[] = [
+export const mockAccounts: readonly Account[] = [
   { id: 'account-1', name: 'Ana Torres', email: 'ana@example.com' },
   { id: 'account-2', name: 'Luis Ramos', email: 'luis@example.com' },
 ];

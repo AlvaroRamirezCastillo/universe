@@ -8,12 +8,13 @@
     "pnpm": "11.21.0"
   },
   "scripts": {
+    "dev:mock-server": "pnpm --filter @universe/mock-server dev",
     "dev:angular": "pnpm --filter @universe/angular start",
     "dev:mobile": "pnpm --filter @universe/mobile start",
     "android": "pnpm --filter @universe/mobile android",
     "ios": "pnpm --filter @universe/mobile ios",
     "build": "pnpm -r --if-present run build",
-    "test": "pnpm --filter @universe/angular test --watch=false",
+    "test": "pnpm --filter @universe/mock-server test && pnpm --filter @universe/angular test --watch=false",
     "typecheck": "pnpm -r --if-present run typecheck",
     "check": "pnpm build && pnpm test && pnpm typecheck"
   }

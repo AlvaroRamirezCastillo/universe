@@ -1,10 +1,21 @@
 import { TestBed } from '@angular/core/testing';
+import { InMemoryAccountRepository } from '@universe/accounts';
+import { ACCOUNT_REPOSITORY } from './account/account.providers';
 import { App } from './app';
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [
+        {
+          provide: ACCOUNT_REPOSITORY,
+          useValue: new InMemoryAccountRepository([
+            { id: 'account-1', name: 'Ana Torres', email: 'ana@example.com' },
+            { id: 'account-2', name: 'Luis Ramos', email: 'luis@example.com' },
+          ]),
+        },
+      ],
     })
       .compileComponents();
   });

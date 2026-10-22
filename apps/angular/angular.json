@@ -59,6 +59,11 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "prebundle": {
+              "exclude": ["@universe/accounts", "axios"]
+            }
+          },
           "configurations": {
             "production": {
               "buildTarget": "angular:build:production"

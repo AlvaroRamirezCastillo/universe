@@ -1,13 +1,13 @@
 import {
-  demoAccounts,
-  InMemoryAccountRepository,
+  AxiosAccountRepository,
   ListAccounts,
   type Account,
 } from '@universe/accounts';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { apiBaseUrl } from '../config/api';
 
-const listAccounts = new ListAccounts(new InMemoryAccountRepository(demoAccounts));
+const listAccounts = new ListAccounts(new AxiosAccountRepository(apiBaseUrl));
 
 export function AccountScreen() {
   const [accounts, setAccounts] = useState<readonly Account[] | null>(null);
